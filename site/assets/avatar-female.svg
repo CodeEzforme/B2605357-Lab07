@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" role="img" aria-labelledby="title desc">
+  <title id="title">Biểu tượng người dùng nữ</title>
+  <desc id="desc">Minh họa chân dung nữ dạng biểu tượng với nền hồng tím.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff9fc3"/><stop offset="1" stop-color="#7f416d"/></linearGradient>
+    <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f6c66f"/><stop offset="1" stop-color="#e88d7d"/></linearGradient>
+  </defs>
+  <circle cx="210" cy="210" r="196" fill="url(#bg)"/>
+  <circle cx="210" cy="210" r="182" fill="#35182d" opacity=".24"/>
+  <path d="M103 222c0-109 43-170 109-170 71 0 116 63 116 174v92H103z" fill="#3a2034"/>
+  <path d="M91 397c11-79 61-121 119-121s109 42 120 121z" fill="url(#shirt)"/>
+  <path d="M162 249h96v71c-9 24-88 24-96 0z" fill="#edb89e"/>
+  <ellipse cx="210" cy="182" rx="86" ry="105" fill="#f6c5a9"/>
+  <path d="M127 184c1-86 39-132 91-132 63 0 104 55 104 146-25-12-45-38-56-72-25 34-72 53-139 58z" fill="#42233a"/>
+  <path d="M139 170c-25 0-25 49 2 52zm143 0c26 0 26 49-2 52z" fill="#f0b99e"/>
+  <path d="M166 180q18-13 36 0M219 180q18-13 36 0" fill="none" stroke="#5c354d" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="184" cy="187" r="5" fill="#38212f"/><circle cx="238" cy="187" r="5" fill="#38212f"/>
+  <path d="M207 195c-3 13-4 22 6 24" fill="none" stroke="#d58e78" stroke-width="5" stroke-linecap="round"/>
+  <path d="M184 235q27 25 55 0" fill="none" stroke="#b95869" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="142" cy="207" r="8" fill="#f6c66f"/><circle cx="278" cy="207" r="8" fill="#f6c66f"/>
+  <path d="M117 173c-4 90 15 142 47 163-50-5-76-51-66-135zM307 164c17 99-1 151-42 173 51-5 79-49 67-143z" fill="#42233a"/>
+</svg>
