@@ -241,7 +241,7 @@ def build_docx():
     p.paragraph_format.space_after = Pt(0)
     title = doc.add_paragraph(style="Title")
     title.add_run("Báo cáo Dịch vụ tiện ích và sử dụng sáng tạo")
-    subtitle = doc.add_paragraph("Google Forms  •  GitHub Pages  •  Quản lý công việc  •  Quản lý dự án")
+    subtitle = doc.add_paragraph("Google Forms  •  Website cá nhân  •  Kế hoạch công việc  •  Kế hoạch dự án")
     subtitle.paragraph_format.space_after = Pt(36)
     for r in subtitle.runs:
         set_run_font(r)
@@ -255,21 +255,20 @@ def build_docx():
         ("Thời gian thực hiện", "Tháng 10 năm 2026"),
         ("Ngày lập báo cáo", "03/10/2026"),
     ], [5.0, 11.8])
-    p = doc.add_paragraph("Báo cáo tổng hợp cấu hình biểu mẫu, website cá nhân, kế hoạch công việc tháng 10/2026 và kế hoạch dự án nhóm. Các tệp nguồn đi kèm cho phép tái tạo tài nguyên trên Google và GitHub.")
+    p = doc.add_paragraph("Báo cáo trình bày kết quả thực hiện bốn nội dung của Bài thực hành 07, gồm Google Forms, website giới thiệu bản thân, kế hoạch công việc tháng 10/2026 và kế hoạch dự án nhóm.")
     p.paragraph_format.space_before = Pt(20)
 
     doc.add_page_break()
-    add_title_block(doc, "BÀI 1", "Tiện ích Google Forms", "Hai biểu mẫu được đặc tả đầy đủ và có mã Google Apps Script để tạo tự động trong tài khoản Google.")
+    add_title_block(doc, "BÀI 1", "Tiện ích Google Forms", "Hai biểu mẫu đã được tạo, công khai quyền điền và thiết lập điều kiện ngừng nhận phản hồi theo yêu cầu.")
     add_docx_table(doc, ["Biểu mẫu", "Trường thông tin", "Điều kiện tự động"], [
-        ("Thông tin sinh viên khóa 52", "Mã SV, họ tên, phái, ngày sinh, nơi sinh, ngành, mã lớp, cố vấn, email, điện thoại, thông tin cha mẹ, địa chỉ gia đình", "Đóng ngày 01/12/2026 theo múi giờ Asia/Bangkok"),
+        ("Thông tin sinh viên khóa 52", "Mã SV, họ tên, phái, ngày sinh, nơi sinh, ngành, mã lớp, cố vấn, email, điện thoại, thông tin cha mẹ, địa chỉ gia đình", "Tự động đóng ngày 01/12/2026"),
         ("Đăng ký tham quan TMA", "Mã SV, họ tên, phái, ngày sinh, nơi sinh, ngành, mã lớp, cố vấn, email, điện thoại", "Đóng ngay khi đủ 80 phản hồi"),
     ], [4.2, 8.4, 4.2])
-    doc.add_heading("Cách triển khai", level=2)
+    doc.add_heading("Kết quả thực hiện", level=2)
     add_bullets(doc, [
-        "Mở script.google.com, tạo dự án và dán nội dung automation/Code.gs.",
-        "Chạy hàm buildLab07 một lần để tạo hai form, hai trigger và lịch tháng 10/2026.",
-        "Chạy getLab07Links để lấy link điền và link chỉnh sửa, sau đó lưu link điền vào README.md.",
-        "Mở hai link trong cửa sổ ẩn danh để kiểm tra quyền truy cập trước khi nộp.",
+        "Biểu mẫu thông tin sinh viên khóa 52 có đầy đủ các trường thông tin theo đề bài và ngừng nhận phản hồi ngày 01/12/2026.",
+        "Biểu mẫu đăng ký tham quan Công ty TMA dành cho sinh viên khóa 51 và giới hạn tối đa 80 người đăng ký.",
+        "Hai đường dẫn điền biểu mẫu đã được lưu trong README.md của kho bài làm.",
     ])
     doc.add_page_break()
     add_title_block(doc, "BÀI 1", "Biểu mẫu thông tin sinh viên đầy đủ", "Ảnh chụp toàn bộ biểu mẫu từ tiêu đề đến nút Gửi.")
@@ -310,7 +309,7 @@ def build_docx():
         ("19–25/10", "Ôn giữa kỳ và tích hợp bài nhóm", "Kiểm tra chất lượng bài"),
         ("26–31/10", "Hoàn thiện Lab 07 và tổng kết", "Bộ bài nộp và kế hoạch tháng mới"),
     ], [3.2, 7.0, 6.6])
-    p = doc.add_paragraph("Tệp calendar/KeHoachThang10-2026.ics có thể nhập trực tiếp vào Google Calendar. Script cũng tạo một lịch riêng và nhắc trước 30 phút cho từng sự kiện.")
+    p = doc.add_paragraph("Các công việc được phân bổ theo từng tuần, có thời gian thực hiện cụ thể và nhắc hẹn trên Google Calendar.")
 
     doc.add_page_break()
     add_title_block(doc, "BÀI 4", "Kế hoạch dự án nhóm", "Nhóm chọn Dự án 4 trong danh sách mẫu và lập kế hoạch phát triển website quản lý chi tiêu cá nhân theo nhiều vòng lặp.")
@@ -321,26 +320,6 @@ def build_docx():
         ("Thành viên 2", "Dữ liệu và xử lý nghiệp vụ", "Cấu trúc dữ liệu, giao dịch và bộ lọc"),
         ("Cả nhóm", "Kiểm thử và rà soát", "Tiêu chí kiểm thử, tích hợp và demo"),
     ], [3.3, 6.2, 7.3])
-
-    doc.add_page_break()
-    add_title_block(doc, "PHỤ LỤC", "Cấu trúc tệp bài làm", "Các tệp được tổ chức để dễ kiểm tra, triển khai và cập nhật trước khi nộp.")
-    add_docx_table(doc, ["Tệp hoặc thư mục", "Mục đích"], [
-        ("README.md", "Lưu link hai Google Forms và link website GitHub Pages"),
-        ("automation/", "Mã Apps Script và hướng dẫn tạo tài nguyên Google"),
-        ("site/", "Mã nguồn website cá nhân"),
-        ("calendar/", "Tệp lịch tháng 10/2026 để nhập Google Calendar"),
-        ("project/", "Dữ liệu kế hoạch dự án dùng cho Trello"),
-        ("BaoCaoKyNangSo.docx", "Bản Word nguồn của báo cáo"),
-        ("BaoCaoKyNangSo.pdf", "Tệp báo cáo nộp chính"),
-    ], [6.0, 10.8])
-    doc.add_heading("Trạng thái hoàn tất", level=2)
-    add_bullets(doc, [
-        "Hai link Google Forms công khai đã được lưu trong README.md.",
-        "Website cá nhân đã dùng thông tin thật và được xuất bản bằng GitHub Pages.",
-        "Kế hoạch tháng 10/2026 đã được tạo và chụp từ Google Calendar.",
-        "Bài 4 chỉ lập kế hoạch và phân công, đúng phạm vi yêu cầu của đề.",
-        "Báo cáo PDF đã được xuất và kiểm tra trực quan trước khi nộp.",
-    ])
 
     for paragraph in doc.paragraphs:
         style_paragraph_runs(paragraph)
@@ -432,7 +411,7 @@ def build_pdf():
     big = ParagraphStyle("big", fontName="Arial-Bold", fontSize=62, leading=62, textColor=colors.HexColor("#" + NAVY), spaceAfter=2)
     title = ParagraphStyle("cover_title", fontName="Arial-Bold", fontSize=27, leading=31, textColor=colors.black, spaceAfter=10)
     sub = ParagraphStyle("sub", fontName="Arial", fontSize=11, leading=15, textColor=colors.HexColor("#" + MUTED), spaceAfter=22)
-    story += [Paragraph("07", big), Paragraph("Báo cáo Dịch vụ tiện ích<br/>và sử dụng sáng tạo", title), Paragraph("Google Forms  •  GitHub Pages  •  Quản lý công việc  •  Quản lý dự án", sub)]
+    story += [Paragraph("07", big), Paragraph("Báo cáo Dịch vụ tiện ích<br/>và sử dụng sáng tạo", title), Paragraph("Google Forms  •  Website cá nhân  •  Kế hoạch công việc  •  Kế hoạch dự án", sub)]
     story += [pdf_table(["Nội dung", "Thông tin"], [
         ("Họ và tên", "Trần Ngọc Mơ"),
         ("Mã sinh viên", "B2605357"),
@@ -440,18 +419,17 @@ def build_pdf():
         ("Ngành", "Truyền thông đa phương tiện"),
         ("Thời gian thực hiện", "Tháng 10 năm 2026"),
         ("Ngày lập báo cáo", "03/10/2026"),
-    ], [48 * mm, 126 * mm]), Spacer(1, 10 * mm), Paragraph("Báo cáo tổng hợp cấu hình biểu mẫu, website cá nhân, kế hoạch công việc tháng 10/2026 và kế hoạch dự án nhóm. Các tệp nguồn đi kèm cho phép tái tạo tài nguyên trên Google và GitHub.", PDF_STYLES["intro"])]
+    ], [48 * mm, 126 * mm]), Spacer(1, 10 * mm), Paragraph("Báo cáo trình bày kết quả thực hiện bốn nội dung của Bài thực hành 07, gồm Google Forms, website giới thiệu bản thân, kế hoạch công việc tháng 10/2026 và kế hoạch dự án nhóm.", PDF_STYLES["intro"])]
 
-    story += [PageBreak(), Paragraph("BÀI 1", PDF_STYLES["eyebrow"]), Paragraph("Tiện ích Google Forms", PDF_STYLES["h1"]), Paragraph("Hai biểu mẫu được đặc tả đầy đủ và có mã Google Apps Script để tạo tự động trong tài khoản Google.", PDF_STYLES["intro"])]
+    story += [PageBreak(), Paragraph("BÀI 1", PDF_STYLES["eyebrow"]), Paragraph("Tiện ích Google Forms", PDF_STYLES["h1"]), Paragraph("Hai biểu mẫu đã được tạo, công khai quyền điền và thiết lập điều kiện ngừng nhận phản hồi theo yêu cầu.", PDF_STYLES["intro"])]
     story += [pdf_table(["Biểu mẫu", "Trường thông tin", "Điều kiện tự động"], [
-        ("Thông tin sinh viên khóa 52", "Mã SV, họ tên, phái, ngày sinh, nơi sinh, ngành, mã lớp, cố vấn, email, điện thoại, thông tin cha mẹ, địa chỉ gia đình", "Đóng ngày 01/12/2026 theo múi giờ Asia/Bangkok"),
+        ("Thông tin sinh viên khóa 52", "Mã SV, họ tên, phái, ngày sinh, nơi sinh, ngành, mã lớp, cố vấn, email, điện thoại, thông tin cha mẹ, địa chỉ gia đình", "Tự động đóng ngày 01/12/2026"),
         ("Đăng ký tham quan TMA", "Mã SV, họ tên, phái, ngày sinh, nơi sinh, ngành, mã lớp, cố vấn, email, điện thoại", "Đóng ngay khi đủ 80 phản hồi"),
-    ], [42 * mm, 85 * mm, 47 * mm]), Spacer(1, 4 * mm), Paragraph("Cách triển khai", PDF_STYLES["h2"])]
+    ], [42 * mm, 85 * mm, 47 * mm]), Spacer(1, 4 * mm), Paragraph("Kết quả thực hiện", PDF_STYLES["h2"])]
     story += pdf_bullets([
-        "Mở script.google.com, tạo dự án và dán nội dung automation/Code.gs.",
-        "Chạy hàm buildLab07 một lần để tạo hai form, hai trigger và lịch tháng 10/2026.",
-        "Chạy getLab07Links để lấy link điền và link chỉnh sửa, sau đó lưu link điền vào README.md.",
-        "Mở hai link trong cửa sổ ẩn danh để kiểm tra quyền truy cập trước khi nộp.",
+        "Biểu mẫu thông tin sinh viên khóa 52 có đầy đủ các trường thông tin theo đề bài và ngừng nhận phản hồi ngày 01/12/2026.",
+        "Biểu mẫu đăng ký tham quan Công ty TMA dành cho sinh viên khóa 51 và giới hạn tối đa 80 người đăng ký.",
+        "Hai đường dẫn điền biểu mẫu đã được lưu trong README.md của kho bài làm.",
     ])
     story += [
         PageBreak(),
@@ -483,7 +461,7 @@ def build_pdf():
         ("12–18/10", "Hoàn thiện bài tập đang làm", "Bản nộp trước hạn"),
         ("19–25/10", "Ôn giữa kỳ và tích hợp bài nhóm", "Kiểm tra chất lượng bài"),
         ("26–31/10", "Hoàn thiện Lab 07 và tổng kết", "Bộ bài nộp và kế hoạch tháng mới"),
-    ], [32 * mm, 76 * mm, 66 * mm]), Spacer(1, 3 * mm), Paragraph("Tệp calendar/KeHoachThang10-2026.ics có thể nhập trực tiếp vào Google Calendar. Script cũng tạo một lịch riêng và nhắc trước 30 phút cho từng sự kiện.", PDF_STYLES["body"])]
+    ], [32 * mm, 76 * mm, 66 * mm]), Spacer(1, 3 * mm), Paragraph("Các công việc được phân bổ theo từng tuần, có thời gian thực hiện cụ thể và nhắc hẹn trên Google Calendar.", PDF_STYLES["body"])]
 
     story += [PageBreak(), Paragraph("BÀI 4", PDF_STYLES["eyebrow"]), Paragraph("Kế hoạch dự án nhóm", PDF_STYLES["h1"]), Paragraph("Nhóm chọn Dự án 4 trong danh sách mẫu và lập kế hoạch phát triển website quản lý chi tiêu cá nhân theo nhiều vòng lặp.", PDF_STYLES["intro"]), scaled_image(SCREENS / "kanban.png", 174 * mm, 108 * mm), Paragraph("Hình 4  Bảng Kanban kế hoạch và phân công dự án", PDF_STYLES["caption"])]
     story += [pdf_table(["Thành viên", "Trách nhiệm chính", "Sản phẩm phụ trách"], [
@@ -492,23 +470,6 @@ def build_pdf():
         ("Cả nhóm", "Kiểm thử và rà soát", "Tiêu chí kiểm thử, tích hợp và demo"),
     ], [35 * mm, 62 * mm, 77 * mm])]
 
-    story += [PageBreak(), Paragraph("PHỤ LỤC", PDF_STYLES["eyebrow"]), Paragraph("Cấu trúc tệp bài làm", PDF_STYLES["h1"]), Paragraph("Các tệp được tổ chức để dễ kiểm tra, triển khai và cập nhật trước khi nộp.", PDF_STYLES["intro"])]
-    story += [pdf_table(["Tệp hoặc thư mục", "Mục đích"], [
-        ("README.md", "Lưu link hai Google Forms và link website GitHub Pages"),
-        ("automation/", "Mã Apps Script và hướng dẫn tạo tài nguyên Google"),
-        ("site/", "Mã nguồn website cá nhân"),
-        ("calendar/", "Tệp lịch tháng 10/2026 để nhập Google Calendar"),
-        ("project/", "Dữ liệu kế hoạch dự án dùng cho Trello"),
-        ("BaoCaoKyNangSo.docx", "Bản Word nguồn của báo cáo"),
-        ("BaoCaoKyNangSo.pdf", "Tệp báo cáo nộp chính"),
-    ], [60 * mm, 114 * mm]), Spacer(1, 5 * mm), Paragraph("Trạng thái hoàn tất", PDF_STYLES["h2"])]
-    story += pdf_bullets([
-        "Hai link Google Forms công khai đã được lưu trong README.md.",
-        "Website cá nhân đã dùng thông tin thật và được xuất bản bằng GitHub Pages.",
-        "Kế hoạch tháng 10/2026 đã được tạo và chụp từ Google Calendar.",
-        "Bài 4 chỉ lập kế hoạch và phân công, đúng phạm vi yêu cầu của đề.",
-        "Báo cáo PDF đã được xuất và kiểm tra trực quan trước khi nộp.",
-    ])
     pdf.build(story)
 
 
