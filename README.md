@@ -9,7 +9,7 @@
 ## Tệp chính
 
 - `BaoCaoKyNangSo.pdf`: báo cáo nộp chính.
-- `BaoCaoKyNangSo.docx`: bản Word để bổ sung ảnh chụp thật và thông tin cá nhân.
+- `BaoCaoKyNangSo.docx`: bản Word nguồn của báo cáo.
 - `automation/Code.gs`: tạo hai Google Forms, trigger đóng form và Google Calendar tháng 10/2026.
 - `calendar/KeHoachThang10-2026.ics`: lịch có thể nhập trực tiếp vào Google Calendar.
 - `project/trello-import.csv`: dữ liệu kế hoạch dự án để nhập hoặc sao chép sang Trello.

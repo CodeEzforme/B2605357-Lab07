@@ -330,7 +330,7 @@ def build_docx():
         ("site/", "Mã nguồn website cá nhân"),
         ("calendar/", "Tệp lịch tháng 10/2026 để nhập Google Calendar"),
         ("project/", "Dữ liệu kế hoạch dự án dùng cho Trello"),
-        ("BaoCaoKyNangSo.docx", "Bản Word để cập nhật thông tin và ảnh chụp thật"),
+        ("BaoCaoKyNangSo.docx", "Bản Word nguồn của báo cáo"),
         ("BaoCaoKyNangSo.pdf", "Tệp báo cáo nộp chính"),
     ], [6.0, 10.8])
     doc.add_heading("Trạng thái hoàn tất", level=2)
@@ -499,7 +499,7 @@ def build_pdf():
         ("site/", "Mã nguồn website cá nhân"),
         ("calendar/", "Tệp lịch tháng 10/2026 để nhập Google Calendar"),
         ("project/", "Dữ liệu kế hoạch dự án dùng cho Trello"),
-        ("BaoCaoKyNangSo.docx", "Bản Word để cập nhật thông tin và ảnh chụp thật"),
+        ("BaoCaoKyNangSo.docx", "Bản Word nguồn của báo cáo"),
         ("BaoCaoKyNangSo.pdf", "Tệp báo cáo nộp chính"),
     ], [60 * mm, 114 * mm]), Spacer(1, 5 * mm), Paragraph("Trạng thái hoàn tất", PDF_STYLES["h2"])]
     story += pdf_bullets([
