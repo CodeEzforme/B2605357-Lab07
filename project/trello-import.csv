@@ -1,12 +1,12 @@
 Name,Description,List,Member,Due Date,Labels
 Chốt ba vòng lặp,"Vòng 1: nhập giao dịch; vòng 2: lọc và ngân sách; vòng 3: biểu đồ và hoàn thiện.",Hoàn thành,Cả nhóm,2026-10-01,Quản lý
 Thống nhất vai trò,"Chốt người phụ trách, kênh trao đổi và lịch họp tuần.",Hoàn thành,Cả nhóm,2026-10-01,Quản lý
-Tạo bảng công việc,"Thiết lập cột, nhãn, hạn hoàn thành và người phụ trách.",Hoàn thành,Thành viên 1,2026-10-02,Quản lý
-Xác định phạm vi,"Ghi nhận thu chi, phân loại và báo cáo theo tháng.",Ý tưởng,Thành viên 1,2026-10-03,Phân tích
+Tạo bảng công việc,"Thiết lập cột, nhãn, hạn hoàn thành và người phụ trách.",Hoàn thành,Trần Ngọc Mơ,2026-10-02,Quản lý
+Xác định phạm vi,"Ghi nhận thu chi, phân loại và báo cáo theo tháng.",Ý tưởng,Trần Ngọc Mơ,2026-10-03,Phân tích
 Thiết kế cấu trúc dữ liệu,"Giao dịch, danh mục và ngân sách.",Ý tưởng,Thành viên 2,2026-10-05,Dữ liệu
-Phác thảo giao diện,"Màn hình tổng quan và biểu mẫu nhập.",Ý tưởng,Thành viên 3,2026-10-06,Thiết kế
-Dựng giao diện chính,"Responsive, điều hướng bàn phím và kiểm tra dữ liệu nhập.",Cần làm,Thành viên 1,2026-10-15,Frontend
+Phác thảo giao diện,"Màn hình tổng quan và biểu mẫu nhập.",Ý tưởng,Trần Ngọc Mơ,2026-10-06,Thiết kế
+Dựng giao diện chính,"Responsive, điều hướng bàn phím và kiểm tra dữ liệu nhập.",Cần làm,Trần Ngọc Mơ,2026-10-15,Frontend
 Xây dựng xử lý giao dịch,"Thêm, sửa, xóa và lọc theo thời gian.",Cần làm,Thành viên 2,2026-10-18,Backend
-Hoàn thiện biểu đồ,"Cơ cấu chi tiêu và tiến độ ngân sách.",Cần làm,Thành viên 3,2026-10-20,Thiết kế
+Hoàn thiện biểu đồ,"Cơ cấu chi tiêu và tiến độ ngân sách.",Cần làm,Trần Ngọc Mơ,2026-10-20,Thiết kế
 Lập tiêu chí kiểm thử,"Luồng chính, dữ liệu biên và kiểm tra trên điện thoại.",Đang thực hiện,Cả nhóm,2026-10-24,Kiểm thử
-Soạn hướng dẫn sử dụng,"Mô tả chức năng và minh họa thao tác.",Đang thực hiện,Thành viên 3,2026-10-26,Tài liệu
+Soạn hướng dẫn sử dụng,"Mô tả chức năng và minh họa thao tác.",Đang thực hiện,Trần Ngọc Mơ,2026-10-26,Tài liệu

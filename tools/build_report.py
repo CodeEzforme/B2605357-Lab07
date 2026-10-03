@@ -248,10 +248,12 @@ def build_docx():
         r.font.size = Pt(12)
         r.font.color.rgb = RGBColor.from_string(MUTED)
     add_docx_table(doc, ["Nội dung", "Thông tin"], [
-        ("Đối tượng", "Sinh viên khóa 52"),
+        ("Họ và tên", "Trần Ngọc Mơ"),
+        ("Mã sinh viên", "B2605357"),
+        ("Lớp và khóa", "26D1A2 - Khóa 52"),
+        ("Ngành", "Truyền thông đa phương tiện"),
         ("Thời gian thực hiện", "Tháng 10 năm 2026"),
         ("Ngày lập báo cáo", "03/10/2026"),
-        ("Thư mục bài làm", "lab07"),
     ], [5.0, 11.8])
     p = doc.add_paragraph("Báo cáo tổng hợp cấu hình biểu mẫu, website cá nhân, kế hoạch công việc tháng 10/2026 và kế hoạch dự án nhóm. Các tệp nguồn đi kèm cho phép tái tạo tài nguyên trên Google và GitHub.")
     p.paragraph_format.space_before = Pt(20)
@@ -282,16 +284,16 @@ def build_docx():
     add_caption(doc, "Hình 1b  Toàn bộ Google Form đăng ký tham quan Công ty TMA")
 
     doc.add_page_break()
-    add_title_block(doc, "BÀI 2", "Website giới thiệu bản thân", "Website một trang được xây dựng bằng HTML, CSS và JavaScript, sẵn sàng xuất bản bằng GitHub Pages.")
+    add_title_block(doc, "BÀI 2", "Website giới thiệu bản thân", "Website của Trần Ngọc Mơ được xây dựng bằng HTML, CSS và xuất bản công khai bằng GitHub Pages.")
     doc.add_picture(str(SCREENS / "website.png"), width=Cm(16.9))
     add_caption(doc, "Hình 2  Giao diện đầu trang của website hồ sơ sinh viên")
     add_docx_table(doc, ["Khu vực", "Nội dung"], [
-        ("Giới thiệu", "Định hướng học tập và cách tiếp cận sản phẩm"),
-        ("Lĩnh vực chuyên môn", "Phát triển web, Git, cộng tác số và giải quyết vấn đề"),
-        ("Quá trình học", "Nền tảng ngành, thực hành sản phẩm và mục tiêu nghề nghiệp"),
-        ("Sản phẩm", "Website cá nhân và bộ công cụ Lab 07"),
+        ("Giới thiệu", "Trần Ngọc Mơ, sinh ngày 18/09/2007, đến từ Bạc Liêu"),
+        ("Quá trình học", "Sinh viên khóa 52, lớp 26D1A2, mã sinh viên B2605357"),
+        ("Lĩnh vực chuyên môn", "Truyền thông đa phương tiện, nội dung số và công cụ cộng tác"),
+        ("Kinh nghiệm và sản phẩm", "Google Forms, Google Calendar, website cá nhân và kế hoạch dự án Lab 07"),
     ], [5.0, 11.8])
-    p = doc.add_paragraph("Đường dẫn nguồn: site/index.html")
+    p = doc.add_paragraph("Đường dẫn công khai: https://codeezforme.github.io/B2605357-Lab07/")
     for r in p.runs:
         set_run_font(r)
         r.font.color.rgb = RGBColor.from_string(CYAN)
@@ -315,9 +317,8 @@ def build_docx():
     doc.add_picture(str(SCREENS / "kanban.png"), width=Cm(16.9))
     add_caption(doc, "Hình 4  Bảng Kanban kế hoạch và phân công dự án")
     add_docx_table(doc, ["Thành viên", "Trách nhiệm chính", "Sản phẩm phụ trách"], [
-        ("Thành viên 1", "Điều phối và frontend", "Phạm vi, giao diện chính, bảng công việc"),
+        ("Trần Ngọc Mơ", "Điều phối, giao diện và tài liệu", "Phạm vi, giao diện chính, biểu đồ và hướng dẫn"),
         ("Thành viên 2", "Dữ liệu và xử lý nghiệp vụ", "Cấu trúc dữ liệu, giao dịch và bộ lọc"),
-        ("Thành viên 3", "Thiết kế trải nghiệm và tài liệu", "Phác thảo, biểu đồ, hướng dẫn sử dụng"),
         ("Cả nhóm", "Kiểm thử và rà soát", "Tiêu chí kiểm thử, tích hợp và demo"),
     ], [3.3, 6.2, 7.3])
 
@@ -332,20 +333,20 @@ def build_docx():
         ("BaoCaoKyNangSo.docx", "Bản Word để cập nhật thông tin và ảnh chụp thật"),
         ("BaoCaoKyNangSo.pdf", "Tệp báo cáo nộp chính"),
     ], [6.0, 10.8])
-    doc.add_heading("Kiểm tra trước khi nộp", level=2)
+    doc.add_heading("Trạng thái hoàn tất", level=2)
     add_bullets(doc, [
-        "Điền họ tên, mã sinh viên và thông tin cá nhân thật vào website và trang bìa nếu được yêu cầu.",
-        "Chạy Apps Script, kiểm tra trigger và dán link phản hồi của hai form vào README.md.",
-        "Bật GitHub Pages, mở link công khai trên điện thoại và dán link vào README.md.",
-        "Thay ảnh minh họa bằng ảnh chụp tài nguyên Google và Trello thật nếu giảng viên yêu cầu bằng chứng trực tiếp.",
-        "Xuất lại BaoCaoKyNangSo.pdf và kiểm tra toàn bộ link trước khi nộp.",
+        "Hai link Google Forms công khai đã được lưu trong README.md.",
+        "Website cá nhân đã dùng thông tin thật và được xuất bản bằng GitHub Pages.",
+        "Kế hoạch tháng 10/2026 đã được tạo và chụp từ Google Calendar.",
+        "Bài 4 chỉ lập kế hoạch và phân công, đúng phạm vi yêu cầu của đề.",
+        "Báo cáo PDF đã được xuất và kiểm tra trực quan trước khi nộp.",
     ])
 
     for paragraph in doc.paragraphs:
         style_paragraph_runs(paragraph)
     doc.core_properties.title = "Báo cáo Dịch vụ tiện ích và sử dụng sáng tạo"
     doc.core_properties.subject = "Bài thực hành 07"
-    doc.core_properties.author = "Sinh viên khóa 52"
+    doc.core_properties.author = "Trần Ngọc Mơ"
     doc.save(DOCX_OUT)
 
 
@@ -423,7 +424,7 @@ def build_pdf():
     build_pdf_styles()
     frame = Frame(18 * mm, 17 * mm, 174 * mm, 262 * mm, leftPadding=0, rightPadding=0, topPadding=0, bottomPadding=0)
     template = PageTemplate(id="main", frames=[frame], onPage=draw_page)
-    pdf = BaseDocTemplate(str(PDF_OUT), pagesize=A4, leftMargin=18 * mm, rightMargin=18 * mm, topMargin=18 * mm, bottomMargin=17 * mm, title="Báo cáo Dịch vụ tiện ích và sử dụng sáng tạo", author="Sinh viên khóa 52")
+    pdf = BaseDocTemplate(str(PDF_OUT), pagesize=A4, leftMargin=18 * mm, rightMargin=18 * mm, topMargin=18 * mm, bottomMargin=17 * mm, title="Báo cáo Dịch vụ tiện ích và sử dụng sáng tạo", author="Trần Ngọc Mơ")
     pdf.addPageTemplates([template])
     story = []
 
@@ -433,10 +434,12 @@ def build_pdf():
     sub = ParagraphStyle("sub", fontName="Arial", fontSize=11, leading=15, textColor=colors.HexColor("#" + MUTED), spaceAfter=22)
     story += [Paragraph("07", big), Paragraph("Báo cáo Dịch vụ tiện ích<br/>và sử dụng sáng tạo", title), Paragraph("Google Forms  •  GitHub Pages  •  Quản lý công việc  •  Quản lý dự án", sub)]
     story += [pdf_table(["Nội dung", "Thông tin"], [
-        ("Đối tượng", "Sinh viên khóa 52"),
+        ("Họ và tên", "Trần Ngọc Mơ"),
+        ("Mã sinh viên", "B2605357"),
+        ("Lớp và khóa", "26D1A2 - Khóa 52"),
+        ("Ngành", "Truyền thông đa phương tiện"),
         ("Thời gian thực hiện", "Tháng 10 năm 2026"),
         ("Ngày lập báo cáo", "03/10/2026"),
-        ("Thư mục bài làm", "lab07"),
     ], [48 * mm, 126 * mm]), Spacer(1, 10 * mm), Paragraph("Báo cáo tổng hợp cấu hình biểu mẫu, website cá nhân, kế hoạch công việc tháng 10/2026 và kế hoạch dự án nhóm. Các tệp nguồn đi kèm cho phép tái tạo tài nguyên trên Google và GitHub.", PDF_STYLES["intro"])]
 
     story += [PageBreak(), Paragraph("BÀI 1", PDF_STYLES["eyebrow"]), Paragraph("Tiện ích Google Forms", PDF_STYLES["h1"]), Paragraph("Hai biểu mẫu được đặc tả đầy đủ và có mã Google Apps Script để tạo tự động trong tài khoản Google.", PDF_STYLES["intro"])]
@@ -465,13 +468,13 @@ def build_pdf():
         Paragraph("Hình 1b  Toàn bộ Google Form đăng ký tham quan Công ty TMA", PDF_STYLES["caption"]),
     ]
 
-    story += [PageBreak(), Paragraph("BÀI 2", PDF_STYLES["eyebrow"]), Paragraph("Website giới thiệu bản thân", PDF_STYLES["h1"]), Paragraph("Website một trang được xây dựng bằng HTML, CSS và JavaScript, sẵn sàng xuất bản bằng GitHub Pages.", PDF_STYLES["intro"]), scaled_image(SCREENS / "website.png", 174 * mm, 132 * mm), Paragraph("Hình 2  Giao diện đầu trang của website hồ sơ sinh viên", PDF_STYLES["caption"])]
+    story += [PageBreak(), Paragraph("BÀI 2", PDF_STYLES["eyebrow"]), Paragraph("Website giới thiệu bản thân", PDF_STYLES["h1"]), Paragraph("Website của Trần Ngọc Mơ được xây dựng bằng HTML, CSS và xuất bản công khai bằng GitHub Pages.", PDF_STYLES["intro"]), scaled_image(SCREENS / "website.png", 174 * mm, 132 * mm), Paragraph("Hình 2  Giao diện đầu trang của website hồ sơ sinh viên", PDF_STYLES["caption"])]
     story += [pdf_table(["Khu vực", "Nội dung"], [
-        ("Giới thiệu", "Định hướng học tập và cách tiếp cận sản phẩm"),
-        ("Lĩnh vực chuyên môn", "Phát triển web, Git, cộng tác số và giải quyết vấn đề"),
-        ("Quá trình học", "Nền tảng ngành, thực hành sản phẩm và mục tiêu nghề nghiệp"),
-        ("Sản phẩm", "Website cá nhân và bộ công cụ Lab 07"),
-    ], [48 * mm, 126 * mm]), Spacer(1, 3 * mm), Paragraph("Đường dẫn nguồn: <font color='#12B8C4'><b>site/index.html</b></font>", PDF_STYLES["body"])]
+        ("Giới thiệu", "Trần Ngọc Mơ, sinh ngày 18/09/2007, đến từ Bạc Liêu"),
+        ("Quá trình học", "Sinh viên khóa 52, lớp 26D1A2, mã sinh viên B2605357"),
+        ("Lĩnh vực chuyên môn", "Truyền thông đa phương tiện, nội dung số và công cụ cộng tác"),
+        ("Kinh nghiệm và sản phẩm", "Google Forms, Google Calendar, website cá nhân và kế hoạch dự án Lab 07"),
+    ], [48 * mm, 126 * mm]), Spacer(1, 3 * mm), Paragraph("Đường dẫn công khai: <font color='#12B8C4'><b>https://codeezforme.github.io/B2605357-Lab07/</b></font>", PDF_STYLES["body"])]
 
     story += [PageBreak(), Paragraph("BÀI 3", PDF_STYLES["eyebrow"]), Paragraph("Kế hoạch công việc tháng 10 năm 2026", PDF_STYLES["h1"]), Paragraph("Kế hoạch được tổ chức theo tuần, kết hợp ghi chú, danh sách việc cần làm và lịch có nhắc hẹn.", PDF_STYLES["intro"]), scaled_image(SCREENS / "calendar-google.png", 174 * mm, 122 * mm), Paragraph("Hình 3  Google Calendar thực tế với kế hoạch tháng 10 năm 2026", PDF_STYLES["caption"])]
     story += [pdf_table(["Tuần", "Trọng tâm", "Kết quả cần đạt"], [
@@ -484,9 +487,8 @@ def build_pdf():
 
     story += [PageBreak(), Paragraph("BÀI 4", PDF_STYLES["eyebrow"]), Paragraph("Kế hoạch dự án nhóm", PDF_STYLES["h1"]), Paragraph("Nhóm chọn Dự án 4 trong danh sách mẫu và lập kế hoạch phát triển website quản lý chi tiêu cá nhân theo nhiều vòng lặp.", PDF_STYLES["intro"]), scaled_image(SCREENS / "kanban.png", 174 * mm, 108 * mm), Paragraph("Hình 4  Bảng Kanban kế hoạch và phân công dự án", PDF_STYLES["caption"])]
     story += [pdf_table(["Thành viên", "Trách nhiệm chính", "Sản phẩm phụ trách"], [
-        ("Thành viên 1", "Điều phối và frontend", "Phạm vi, giao diện chính, bảng công việc"),
+        ("Trần Ngọc Mơ", "Điều phối, giao diện và tài liệu", "Phạm vi, giao diện chính, biểu đồ và hướng dẫn"),
         ("Thành viên 2", "Dữ liệu và xử lý nghiệp vụ", "Cấu trúc dữ liệu, giao dịch và bộ lọc"),
-        ("Thành viên 3", "Thiết kế trải nghiệm và tài liệu", "Phác thảo, biểu đồ, hướng dẫn sử dụng"),
         ("Cả nhóm", "Kiểm thử và rà soát", "Tiêu chí kiểm thử, tích hợp và demo"),
     ], [35 * mm, 62 * mm, 77 * mm])]
 
@@ -499,13 +501,13 @@ def build_pdf():
         ("project/", "Dữ liệu kế hoạch dự án dùng cho Trello"),
         ("BaoCaoKyNangSo.docx", "Bản Word để cập nhật thông tin và ảnh chụp thật"),
         ("BaoCaoKyNangSo.pdf", "Tệp báo cáo nộp chính"),
-    ], [60 * mm, 114 * mm]), Spacer(1, 5 * mm), Paragraph("Kiểm tra trước khi nộp", PDF_STYLES["h2"])]
+    ], [60 * mm, 114 * mm]), Spacer(1, 5 * mm), Paragraph("Trạng thái hoàn tất", PDF_STYLES["h2"])]
     story += pdf_bullets([
-        "Điền họ tên, mã sinh viên và thông tin cá nhân thật vào website và trang bìa nếu được yêu cầu.",
-        "Chạy Apps Script, kiểm tra trigger và dán link phản hồi của hai form vào README.md.",
-        "Bật GitHub Pages, mở link công khai trên điện thoại và dán link vào README.md.",
-        "Thay ảnh minh họa bằng ảnh chụp tài nguyên Google và Trello thật nếu giảng viên yêu cầu bằng chứng trực tiếp.",
-        "Xuất lại BaoCaoKyNangSo.pdf và kiểm tra toàn bộ link trước khi nộp.",
+        "Hai link Google Forms công khai đã được lưu trong README.md.",
+        "Website cá nhân đã dùng thông tin thật và được xuất bản bằng GitHub Pages.",
+        "Kế hoạch tháng 10/2026 đã được tạo và chụp từ Google Calendar.",
+        "Bài 4 chỉ lập kế hoạch và phân công, đúng phạm vi yêu cầu của đề.",
+        "Báo cáo PDF đã được xuất và kiểm tra trực quan trước khi nộp.",
     ])
     pdf.build(story)
 
